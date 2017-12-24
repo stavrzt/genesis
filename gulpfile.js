@@ -13,7 +13,7 @@ const gulp = require('gulp'),
 const paths = {
     html: ['index.html'],
     css: ['src/css/styles.css'],
-    scss :['src/scss/styles.scss'],
+    scss :['src/scss/*.scss'],
     js: ['src/js/scripts.js']
 };
 
