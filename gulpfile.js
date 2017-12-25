@@ -21,7 +21,7 @@ gulp.task('scss', function () {
     gulp.src(paths.scss)
         .pipe(sourcemaps.init())
         .pipe(globbing({
-            extensions: ['src/scss']
+            extensions: ['.scss']
         }))
         .pipe(sass({
             outputStyle: 'expanded',

@@ -1,18 +1,23 @@
 @import "fonts";
 @import "variables";
 @import "bootstrap-grid/grid";
+@import "../../node_modules/owl.carousel2/src/scss/owl.carousel";
+@import "../../node_modules/nouislider/distribute/nouislider.min";
 
 body {
   font-family: 'Roboto';
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
   height: 1500px;
+}
+
+.wrapper {
+  overflow: hidden;
 }
 
 /* Header */
 .header {
-  padding: 20px 0 26px;
+  padding: 20px 0;
 }
 
 .logo {
@@ -30,11 +35,13 @@ body {
   text-align: right;
 }
 
-.navigation--list {
+.navigation__list {
   list-style: none;
   font-size: 0;
   padding: 0;
   transition: .4s ease-in-out right;
+  text-align: left;
+  z-index: 2;
 
   li {
     display: inline-block;
@@ -66,7 +73,7 @@ body {
   }
 }
 
-.navigation--menu-toggle {
+.navigation__menu-toggle {
   font-size: 0;
   line-height: 0;
   cursor: pointer;
@@ -81,7 +88,7 @@ body {
     position: absolute;
     top: 30px;
     right: 162px;
-    z-index: 2;
+    z-index: 3;
 
     span {
       margin: 0;
@@ -130,7 +137,7 @@ body {
   margin: 4px 14px 0 0;
 }
 
-.premium--title {
+.premium__title {
   font-size: 14px;
   display: inline-block;
   letter-spacing: .2px;
@@ -139,7 +146,7 @@ body {
   margin-right: 10px;
 }
 
-.premium--info {
+.premium__info {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -167,6 +174,7 @@ body {
     transition: .34s ease-in-out opacity, .34s ease-in-out visibility;
     margin: 0;
     box-shadow: 0 0 8px 0 $blue;
+    z-index: 2;
 
     &:after,
     &:before {
@@ -257,6 +265,7 @@ body {
   opacity: 0;
   transition: .34s ease-in-out opacity, .34s ease-in-out visibility;
   word-break: break-all;
+  z-index: 2;
 
   a {
     display: block;
@@ -294,16 +303,192 @@ body {
   }
 }
 
-.dropdown-menu--divider {
+.dropdown-menu__divider {
   margin: 6px 0 7px;
   border-bottom: 1px solid $blue;
+}
+
+.owl-stage {
+  /* Fix for right Mozilla rendering */
+  display: -moz-box;
+}
+
+/* Girl examples */
+.top-girls-wrap {
+  background-color: $light-grey;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+
+.top-girls {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Search */
+.search {
+  font-family: 'Roboto';
+  padding-bottom: 20px;
+}
+
+.search__gender-wrap {
+  display: inline-block;
+  width: 100%;
+  max-width: 170px;
+  position: relative;
+  margin-top: 15px;
+
+  &:after {
+    content: url(../imgs/search-arrow.svg);
+    width: 14px;
+    position: absolute;
+    top: 2px;
+    right: 1px;
+  }
+}
+
+.search__gender {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: 'Roboto';
+  font-size: 16px;
+  border-bottom: 1px solid $light-grey-border;
+  letter-spacing: 1px;
+  padding: 0 0 9px 0;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.search__header {
+  text-align: center;
+  letter-spacing: 1px;
+
+  h3 {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 27px 0 39px 0;
+  }
+}
+
+.search__city-wrap {
+  text-align: right;
+  position: relative;
+  margin: 15px 29px 0 0;
+
+  &:after {
+    content: url(../imgs/close.svg);
+    width: 12px;
+    position: absolute;
+    top: 2px;
+    right: 1px;
+  }
+}
+
+.search__city {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: 'Roboto';
+  font-size: 16px;
+  border-bottom: 1px solid $light-grey-border;
+  letter-spacing: 1px;
+  padding: 0 22px 9px 0;
+  width: 100%;
+  max-width: 272px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.age-wrap {
+  padding-top: 15px;
+  font-size: 0;
+  text-align: center;
+}
+
+.age-title {
+  font-size: 16px;
+  display: inline-block;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.age-range-wrap {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 4px;
+  width: 180px;
+  margin-right: 30px;
+}
+
+.age-range-wrap .noUi-horizontal .noUi-tooltip {
+  bottom: auto;
+  top: 120%;
+  font-size: 16px;
+  border: none;
+}
+
+.age-range-wrap .noUi-horizontal {
+  height: 1px;
+  border: 0;
+  background-color: $light-grey-border;
+  border-radius: 0;
+}
+
+.age-range-wrap .noUi-connect {
+  background-color: $blue;
+  box-shadow: none;
+}
+
+.age-range-wrap .noUi-horizontal .noUi-handle {
+  outline: none;
+  cursor: pointer;
+}
+
+.age-range-wrap .noUi-horizontal .noUi-handle {
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: -6px;
+  border-radius: 6px;
+  box-shadow: none;
+  background-color: $blue;
+  border: 0;
+}
+
+.noUi-handle:after,
+.noUi-handle:before {
+  display: none;
+}
+
+.search__submit {
+  width: 100%;
+  max-width: 170px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $white;
+  letter-spacing: 2px;
+  background: linear-gradient(315deg, rgba(78, 146, 255, 1) 0%, rgba(78, 146, 255, 1) 22%, rgba(55, 108, 248, 1) 100%);
+  transition: .4s ease-in-out background;
+
+  &:hover {
+    background: $blue;
+  }
 }
 
 @media screen and (max-width: 1199px) {
   .navigation {
     padding-top: 10px;
   }
-  .navigation--list {
+  .navigation__list {
     li {
       margin-right: 23px;
     }
@@ -313,7 +498,7 @@ body {
     }
   }
 
-  .premium--title {
+  .premium__title {
     margin-right: 5px;
   }
 
@@ -321,6 +506,25 @@ body {
   .credits {
     margin-top: 0;
   }
+
+  /* Search */
+  .search__city {
+    max-width: 220px;
+  }
+
+  .age-range-wrap {
+    width: 135px;
+    margin-right: 0;
+  }
+
+  .age-title {
+    margin-right: 5px;
+  }
+
+  .search__city-wrap {
+    margin-right: 0;
+  }
+
 }
 
 @media screen and (max-width: 991px) {
@@ -330,9 +534,9 @@ body {
     position: static;
   }
 
-  .navigation--list {
+  .navigation__list {
     background-color: $light-grey;
-    position: absolute;
+    position: fixed;
     width: 200px;
     top: 0;
     bottom: 0;
@@ -340,7 +544,6 @@ body {
     padding: 30px 20px;
     text-align: center;
     border-left: 1px solid $grey;
-    z-index: 1;
 
     &.active {
       right: 0;
@@ -355,7 +558,7 @@ body {
 
   }
 
-  .navigation--menu-toggle {
+  .navigation__menu-toggle {
     display: inline-block;
   }
 
@@ -377,6 +580,26 @@ body {
   .navigation {
     padding: 10px 15px 0 0;
   }
+
+  /* Search */
+  .search__submit-wrap {
+    text-align: right;
+    margin-top: 40px;
+  }
+
+  .age-wrap {
+    text-align: left;
+    margin-top: 32px;
+  }
+
+  .search__gender-wrap {
+    max-width: 100%;
+  }
+
+  .age-range-wrap {
+    max-width: calc(100% - 73px);
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -390,7 +613,7 @@ body {
     margin-top: 18px;
   }
 
-  .premium--info {
+  .premium__info {
     p {
       left: -50px;
       right: inherit;
@@ -401,4 +624,25 @@ body {
       }
     }
   }
+
+  /* Search */
+  .search__header {
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .search__city-wrap {
+    margin-top: 46px;
+  }
+
+  .search__city {
+    max-width: 100%;
+  }
+
+  .search__submit-wrap {
+    text-align: center;
+    margin-top: 50px;
+  }
 }
+

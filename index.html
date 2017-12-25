@@ -7,6 +7,8 @@
 </head>
 <body>
 
+<div class="wrapper">
+
 <header class="header">
     <div class="container">
         <div class="row">
@@ -16,12 +18,12 @@
                 </a>
             </div>
             <nav class="col-lg-6 col-sm-1 col-2 navigation">
-                <div class="navigation--menu-toggle">
+                <div class="navigation__menu-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="navigation--list">
+                <ul class="navigation__list">
                     <li><a href="#">Поиск</a></li>
                     <li><a href="#">Мои переписки</a></li>
                     <li><a href="#">Избранное</a></li>
@@ -30,10 +32,11 @@
             </nav>
             <div class="col-lg-4 col-sm-7 col-12 account-info">
                 <div class="premium">
-                    <span class="premium--title">Премиум</span>
-                    <div class="premium--info">
+                    <span class="premium__title">Премиум</span>
+                    <div class="premium__info">
                         <img src="./src/imgs/info.svg" alt="">
-                        <p>Премиум пользователям доступен весь сервис <span>JuliaDates</span> без ограничений в течение срока оплаченного абонемента.</p>
+                        <p>Премиум пользователям доступен весь сервис <span>JuliaDates</span> без ограничений в течение
+                            срока оплаченного абонемента.</p>
                     </div>
                 </div>
                 <p class="credits">100 кредитов</p>
@@ -43,10 +46,10 @@
                     </div>
                     <ul class="dropdown-menu">
                         <li>Аккаунт <span>attractman</span></li>
-                        <li class="dropdown-menu--divider"></li>
+                        <li class="dropdown-menu__divider"></li>
                         <li><a href="#">Профиль</a></li>
                         <li><a href="#">Пожелания</a></li>
-                        <li class="dropdown-menu--divider"></li>
+                        <li class="dropdown-menu__divider"></li>
                         <li><a href="#">Помощь</a></li>
                         <li><a href="#">Настройки</a></li>
                         <li><a href="#">Выход</a></li>
@@ -57,12 +60,73 @@
     </div>
 </header>
 
-<!--<main style="background-color: lightgray;">-->
+<main>
+    <div class="top-girls-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="top-girls owl-carousel">
+                    <img src="./src/imgs/actual_girls/actual_girl1.png" alt="actual_girl1">
+                    <img src="./src/imgs/actual_girls/actual_girl2.png" alt="actual_girl2">
+                    <img src="./src/imgs/actual_girls/actual_girl3.png" alt="actual_girl3">
+                    <img src="./src/imgs/actual_girls/actual_girl4.png" alt="actual_girl4">
+                    <img src="./src/imgs/actual_girls/actual_girl5.png" alt="actual_girl5">
+                    <img src="./src/imgs/actual_girls/actual_girl6.png" alt="actual_girl6">
+                    <img src="./src/imgs/actual_girls/actual_girl7.png" alt="actual_girl7">
+                    <img src="./src/imgs/actual_girls/actual_girl8.png" alt="actual_girl8">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search container">
+        <div class="row">
+            <div class="col-12 search__header">
+                <h3>Я ищу</h3>
+            </div>
+        </div>
+        <form action="" id="search">
+            <div class="row">
+                <div class="col-md-2 col-sm-6">
+                    <div class="search__gender-wrap">
+                        <select name="gender" id="gender" class="search__gender">
+                            <option value="female">Девушку</option>
+                            <option value="male">Парня</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+
+                    <div class="search__city-wrap">
+                        <input type="text" class="search__city" value="Санкт-Петербург">
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-6 age-wrap">
+                    <span class="age-title">Возраст</span>
+
+                    <div class="age-range-wrap">
+                        <div class="age-range"></div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 search__submit-wrap">
+                    <button class="search__submit" type="submit" form="search" value="Submit">Найти</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="advanced-search">
+
+    </div>
 
 </main>
 
+</div>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+<script src="node_modules/owl.carousel2/dist/owl.carousel.min.js"></script>
+<script src="node_modules/nouislider/distribute/nouislider.min.js"></script>
 <script src="src/js/scripts.js"></script>
 </body>
 </html>
